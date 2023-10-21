@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "brandName": "Toyota",
+      "image": "https://brandlogos.net/wp-content/uploads/2014/06/toyota-logo-vector-download-400x400.jpg"
+    },
+    {
+      "id": 2,
+      "brandName": "Honda",
+      "image": "https://i.pinimg.com/750x/6e/e6/ae/6ee6ae2bf0291df84fbec685cd296fb8.jpg"
+    },
+    {
+      "id": 3,
+      "brandName": "Ford",
+      "image": "https://i.pinimg.com/1200x/31/15/8b/31158b7fd6b665dc137abf4d6700e3d6.jpg"
+    },
+    {
+      "id": 4,
+      "brandName": "Chevrolet",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOfRz0IEeqHu9KtofhenkIfmfSEoes4jWrEV1Cc2MLOk0Ph-9R06JE8eYFtqoja585OqU&usqp=CAU"
+    },
+    {
+      "id": 5,
+      "brandName": "BMW",
+      "image": "https://di-uploads-pod16.dealerinspire.com/competitionbmwofsmithtown/uploads/2020/03/new-bmw-logo.jpg"
+    },
+    {
+      "id": 6,
+      "brandName": "Mercedes-Benz",
+      "image": "https://static.vecteezy.com/system/resources/previews/018/911/657/original/mercedes-benz-car-logo-free-vector.jpg"
+    },
+    {
+      "id": 7,
+      "brandName": "Volkswagen",
+      "image": "https://cimg1.ibsrv.net/ibimg/hgm/1920x1080-1/100/715/vw-logo_100715297.jpg"
+    }
+  ]
+  
