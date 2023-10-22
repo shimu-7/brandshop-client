@@ -2,11 +2,16 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { CgProfile } from "react-icons/cg";
+import { FaToggleOn, FaToggleOff } from "react-icons/fa";
 
 
 const Navbar = () => {
 
-    const { user, logOut } = useContext(AuthContext)
+    const { user, logOut, toggleDarkMode, darkMode } = useContext(AuthContext)
+
+    
+
+    
 
     const links = <>
         <li className="mx-2"><NavLink
@@ -14,7 +19,7 @@ const Navbar = () => {
             style={({ isActive, isPending, isTransitioning }) => {
                 return {
                     fontWeight: isActive ? "bold" : "",
-                    color: isPending ? "red" : "black",
+                    color: isPending ? "red" : darkMode? "red":"black",
                     viewTransitionName: isTransitioning ? "slide" : "",
                 };
             }}
@@ -27,7 +32,7 @@ const Navbar = () => {
             style={({ isActive, isPending, isTransitioning }) => {
                 return {
                     fontWeight: isActive ? "bold" : "",
-                    color: isPending ? "red" : "black",
+                    color: isPending ? "red" : darkMode? "red":"black",
                     viewTransitionName: isTransitioning ? "slide" : "",
                 };
             }}
@@ -40,7 +45,7 @@ const Navbar = () => {
             style={({ isActive, isPending, isTransitioning }) => {
                 return {
                     fontWeight: isActive ? "bold" : "",
-                    color: isPending ? "red" : "black",
+                    color: isPending ? "red" : darkMode? "red":"black",
                     viewTransitionName: isTransitioning ? "slide" : "",
                 };
             }}
@@ -48,13 +53,13 @@ const Navbar = () => {
             My Cart
         </NavLink>
         </li>
-        
+
 
     </>
 
 
     return (
-        <div className="">
+        <div>
             <div className="navbar  rounded-md ">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -66,6 +71,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <a className="btn btn-ghost text-red-600 normal-case text-xl">BrandWheelhouse</a>
+                   
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="flex mx-2 text-red-400">
@@ -89,6 +95,9 @@ const Navbar = () => {
                     {
                         user ? <Link to="/"><button onClick={logOut} className="btn">Logout</button></Link> : <Link to="/login"> <button className="btn">Login</button></Link>
 
+                    }
+                    {
+                        darkMode? <FaToggleOn onClick={toggleDarkMode}></FaToggleOn>:<FaToggleOff onClick={toggleDarkMode}></FaToggleOff>
                     }
 
                 </div>
