@@ -59,8 +59,8 @@ const Login = () => {
             })
     }
     return (
-        <div>
-            <h2 className="3xl">this is Log in page</h2>
+        <div className="max-w-6xl mx-auto">
+            {/* <h2 className="3xl">this is Log in page</h2> */}
             <Navbar></Navbar>
             <div className="hero min-h-screen ">
 
