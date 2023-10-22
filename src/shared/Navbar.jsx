@@ -6,17 +6,51 @@ import { CgProfile } from "react-icons/cg";
 
 const Navbar = () => {
 
-    const {user} = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
 
     const links = <>
-        <li className="mx-2"><NavLink to="/" >Home</NavLink></li>
-        <li><NavLink >About</NavLink></li> 
+        <li className="mx-2"><NavLink
+            to="/"
+            style={({ isActive, isPending, isTransitioning }) => {
+                return {
+                    fontWeight: isActive ? "bold" : "",
+                    color: isPending ? "red" : "black",
+                    viewTransitionName: isTransitioning ? "slide" : "",
+                };
+            }}
+        >
+            Home
+        </NavLink>
+        </li>
+        <li className="mx-2"><NavLink
+            to="/addProduct"
+            style={({ isActive, isPending, isTransitioning }) => {
+                return {
+                    fontWeight: isActive ? "bold" : "",
+                    color: isPending ? "red" : "black",
+                    viewTransitionName: isTransitioning ? "slide" : "",
+                };
+            }}
+        >
+            Add Product
+        </NavLink>
+        </li>
+        <li className=""><NavLink
+            to="/myCart"
+            style={({ isActive, isPending, isTransitioning }) => {
+                return {
+                    fontWeight: isActive ? "bold" : "",
+                    color: isPending ? "red" : "black",
+                    viewTransitionName: isTransitioning ? "slide" : "",
+                };
+            }}
+        >
+            My Cart
+        </NavLink>
+        </li>
+        
 
     </>
-
-    const logOut = () =>{
-
-    }
 
 
     return (
@@ -56,7 +90,7 @@ const Navbar = () => {
                         user ? <Link to="/"><button onClick={logOut} className="btn">Logout</button></Link> : <Link to="/login"> <button className="btn">Login</button></Link>
 
                     }
-                 
+
                 </div>
             </div>
 

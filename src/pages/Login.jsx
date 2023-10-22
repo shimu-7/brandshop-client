@@ -1,30 +1,62 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../shared/Navbar";
 import { AuthContext } from "../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
     const [logError, setLogError] = useState(null)
 
-    const {googleSignIn} = useContext(AuthContext);
+    const { googleSignIn, logIn } = useContext(AuthContext);
 
-    const handleGoogleLogIn = () =>{
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const handleGoogleLogIn = () => {
         googleSignIn()
-        .then(result=>{
-            console.log(result.user);
-        })
-        .catch(error =>{
-            setLogError(error.message);
-        })
+            .then(result => {
+                console.log(result.user);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Great',
+                    text: 'User Logged in successfully',
+                    
+                })
+                setTimeout(() => {
+                    navigate(location?.state ? location.state : '/')
+                }, 1000);
+
+            })
+            .catch(error => {
+                setLogError(error.message);
+            })
     }
 
 
-    const handleLogin = e =>{
+    const handleLogin = e => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email,password); 
+        console.log(email, password);
+        setLogError(null)
+
+        logIn(email, password)
+            .then(result => {
+                console.log(result.user);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Great',
+                    text: 'User logged in successfully',
+                    
+                })
+                setTimeout(() => {
+                    navigate(location?.state ? location.state : '/')
+                }, 1000);
+            })
+            .catch(error =>{
+                setLogError(error.message);
+            })
     }
     return (
         <div>
@@ -54,7 +86,9 @@ const Login = () => {
                                 </label>
                             </div>
                             <p>New here!!! Please <Link to="/register" className="text-red-600">Register</Link> <span className="font-bold">or</span> </p>
-                            <button onClick={handleGoogleLogIn} className="bg-slate-200 rounded-lg py-1">Continue with <span className="font-bold text-xl">Google</span></button>
+
+                            <button onClick={handleGoogleLogIn} className="bg-slate-200 rounded-lg py-1"> <Link to="/">Continue with <span className="font-bold text-xl">Google</span></Link></button>
+
                             <div className="form-control mt-6">
                                 <button className="btn bg-teal-200">Login</button>
                             </div>
@@ -62,7 +96,7 @@ const Login = () => {
                         {
                             logError && <p className="text-red-500 pl-2 pb-2">{logError}</p>
                         }
-                        
+
                     </div>
                 </div>
             </div>
