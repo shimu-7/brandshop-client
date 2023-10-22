@@ -70,7 +70,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-red-600 normal-case text-xl">BrandWheelhouse</a>
+                    <a className="btn btn-ghost text-red-600 normal-case text-xl">ThrillWheel</a>
                    
                 </div>
                 <div className="navbar-center hidden lg:flex">
