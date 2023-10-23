@@ -5,6 +5,7 @@ import Swal from 'sweetalert2'
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import Footer from "../components/Footer";
 
 
 const Register = () => {
@@ -51,7 +52,6 @@ const Register = () => {
                         icon: 'success',
                         title: 'Great',
                         text: 'User Registered successfully',
-                        footer: '<a href="">Why do I have this issue?</a>'
                       })
                 setTimeout(() => {
                     navigate(location?.state ? location.state : '/')
@@ -114,6 +114,9 @@ const Register = () => {
                     </div>
 
                 </div>
+            </div>
+            <div>
+                <Footer></Footer>
             </div>
 
         </div>

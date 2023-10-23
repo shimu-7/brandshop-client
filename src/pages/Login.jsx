@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../shared/Navbar";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
+import Footer from "../components/Footer";
 
 
 const Login = () => {
@@ -99,6 +100,9 @@ const Login = () => {
 
                     </div>
                 </div>
+            </div>
+            <div>
+                <Footer></Footer>
             </div>
         </div>
     );

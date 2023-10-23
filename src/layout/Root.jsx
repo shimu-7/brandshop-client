@@ -1,6 +1,6 @@
 
 import { Outlet } from "react-router-dom";
-import Footer from "../components/Footer";
+
 
 //className="max-w-6xl mx-auto "
 
@@ -14,7 +14,7 @@ const Root = () => {
                 <div >
                     
                     <Outlet></Outlet>
-                    <Footer></Footer>
+                    
                 </div>
             </div>
         </div>

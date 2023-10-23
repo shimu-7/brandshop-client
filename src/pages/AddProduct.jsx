@@ -1,8 +1,10 @@
+import Swal from "sweetalert2";
 import Navbar from "../shared/Navbar";
+import Footer from "../components/Footer";
 
 
 const AddProduct = () => {
-    const handleAddProduct = e =>{
+    const handleAddProduct = e => {
         e.preventDefault();
         const pName = e.target.pName.value;
         const bName = e.target.bName.value;
@@ -11,8 +13,28 @@ const AddProduct = () => {
         const price = e.target.price.value;
         const rating = e.target.rating.value;
         const description = e.target.description.value;
-        const newProduct = {pName, bName, photo, type, price, rating, description};
+        const newProduct = { pName, bName, photo, type, price, rating, description };
         console.log(newProduct);
+
+        fetch('http://localhost:5000/products', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newProduct)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Congratulation!!!',
+                        text: 'Product Added Successfully.',
+                        icon: 'success',
+                        confirmButtonText: 'Great'
+                    })
+                }
+            })
     }
     return (
         <div className="max-w-6xl  mx-auto min-h-screen">
@@ -48,7 +70,7 @@ const AddProduct = () => {
                             <input type="text" placeholder="Photo Url" className="input input-bordered w-full" name="photo" />
                         </label>
                     </div>
-                   
+
                 </div>
                 <div className="md:flex gap-3">
                     <div className="form-control md:w-1/3">
@@ -86,16 +108,20 @@ const AddProduct = () => {
                             <textarea className="textarea w-full textarea-bordered h-24" placeholder="About Product" name="description"></textarea>
                         </label>
                     </div>
-                   
+
                 </div>
 
-            
-              <div>
 
-              <input type="submit" value="Add Product" className=" mt-3 bg-slate-200 font-bold input input-bordered w-full" />
-              </div>
-             
+                <div>
+
+                    <input type="submit" value="Add Product" className=" mt-3 bg-slate-200 font-bold input input-bordered w-full" />
+                </div>
+
             </form>
+
+            <div>
+                <Footer></Footer>
+            </div>
         </div>
     );
 };
