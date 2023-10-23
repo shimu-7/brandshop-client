@@ -4,7 +4,7 @@ import { AuthContext } from "../providers/AuthProvider";
 const Footer = () => {
     const { darkMode } = useContext(AuthContext)
     return (
-        <div className={` ${darkMode ? "dark" : "light"} pt-20`}>
+        <div className={`  ${darkMode ? "dark" : "light"} pt-20`}>
             {/* <h3>Footer section</h3> */}
             <div className="bg-gray-400 max-w-6xl  mx-auto h-[2px] w-full"></div>
             <div className="max-w-6xl mx-auto text-center py-6 md:flex md:justify-between ">
