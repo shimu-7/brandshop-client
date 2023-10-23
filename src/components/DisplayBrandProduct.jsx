@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 const DisplayBrandProduct = ({ product }) => {
 
-    const { pName, bName, photo, type, price, rating, description } = product;
+    const { pName, bName, photo, type, price, rating } = product;
     const rate = parseInt(rating);
     const count = [1,2,3,4,5];
-    console.log(rate);
+    //console.log(rate);
     const check = (id)=>{
         if(rate==id) return "checked";
         else return ""

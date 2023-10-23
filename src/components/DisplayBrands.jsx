@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const DisplayBrands = ({ brand }) => {
     const { darkMode } = useContext(AuthContext);
-    console.log(brand)
+    //console.log(brand)
     return (
         <div>
             <Link to={`/brandProducts/${brand.brandName}`}>
