@@ -14,7 +14,7 @@ const MyCart = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/cart')
+        fetch('https://brand-shop-server-o7rumxnjq-shamima-shimus-projects.vercel.app/cart')
             .then(res => res.json())
             .then(data => {
                 const myProducts = data.filter(one => one.email === email);
@@ -27,7 +27,7 @@ const MyCart = () => {
 
 
     return (
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto min-h-screen">
             
             <Navbar></Navbar>
             <h2 className="text-3xl text-center font-bold mt-10 ">Product in my Cart</h2>

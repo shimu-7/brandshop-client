@@ -17,7 +17,7 @@ const DisplayBrandProduct = ({ product }) => {
         <div>
 
             <div className="card bg-base-100 shadow-xl">
-                <figure><img src={photo} alt="Shoes" /></figure>
+                <figure><img className='h-60' src={photo} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">
                         {pName}

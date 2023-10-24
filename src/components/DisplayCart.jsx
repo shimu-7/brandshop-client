@@ -21,7 +21,7 @@ const DisplayCart = ({ product, setProducts, products }) => {
                 //     'Your file has been deleted.',
                 //     'success'
                 // )
-                fetch(`http://localhost:5000/cart/${_id}`, {
+                fetch(`https://brand-shop-server-o7rumxnjq-shamima-shimus-projects.vercel.app/cart/${_id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())
@@ -48,7 +48,7 @@ const DisplayCart = ({ product, setProducts, products }) => {
         <div>
             {
                 <div className="card  bg-base-100 shadow-xl">
-                    <figure><img src={photo} alt="Movie" /></figure>
+                    <figure><img className='h-60' src={photo} alt="Movie" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">{pName}
                             <div className="badge text-white badge-error">{bName}</div>

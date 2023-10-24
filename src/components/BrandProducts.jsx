@@ -17,7 +17,7 @@ const BrandProducts = () => {
      
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://brand-shop-server-o7rumxnjq-shamima-shimus-projects.vercel.app/products')
             .then(res => res.json())
             .then(data => {
                 const pro = data.filter(one => one.bName.toLowerCase() === brand.toLowerCase());
