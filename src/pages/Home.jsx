@@ -54,6 +54,8 @@ const Home = () => {
                 <img className="h-60" src="https://moneyinc.com/wp-content/uploads/2022/04/2017-Honda-NSX-750x422.jpg" alt="" />
             </div>
 
+            <h2 className="text-4xl font-bold  text-center mt-20 mb-6">Our Achivements from  previous years</h2>
+
             <div className="grid mt-5 py-5 md: grid-cols-4 gap-5 max-w-6xl  mx-auto text-center">
                 <div>
                     <h2 className="text-3xl text-red-400 font-semibold">674</h2>

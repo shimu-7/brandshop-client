@@ -47,8 +47,8 @@ const Detail = () => {
     return (
         <div className="max-w-6xl mx-auto min-h-screen">
             <Navbar></Navbar>
-            <h2 className="3xl">this is detail page</h2>
-            <div className="card bg-base-100 shadow-xl">
+            
+            <div className="card bg-base-100 shadow-xl my-10">
                 <figure><img src={photo} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">
