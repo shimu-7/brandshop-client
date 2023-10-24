@@ -33,7 +33,7 @@ const DisplayBrandProduct = ({ product }) => {
                     </div>
                     <div className="card-actions flex justify-center mt-3 w-full">
                         <Link className='w-full' to={`/details/${product._id}`}><button  className="badge badge-success w-full ">View Details</button></Link>
-                        <Link className='w-full'><button className="badge  badge-accent w-full">Update</button></Link>
+                        <Link to={`/updateProduct/${product._id}`} className='w-full'><button className="badge  badge-accent w-full">Update</button></Link>
                     </div>
                 </div>
             </div>
