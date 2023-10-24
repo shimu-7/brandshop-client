@@ -14,7 +14,7 @@ const MyCart = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('https://brand-shop-server-o7rumxnjq-shamima-shimus-projects.vercel.app/cart')
+        fetch('https://brand-shop-server-bl488qyui-shamima-shimus-projects.vercel.app/cart')
             .then(res => res.json())
             .then(data => {
                 const myProducts = data.filter(one => one.email === email);

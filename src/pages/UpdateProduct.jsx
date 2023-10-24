@@ -21,7 +21,7 @@ const UpdateProduct = () => {
 
         console.log(UpdatedProduct)
 
-        fetch(`https://brand-shop-server-o7rumxnjq-shamima-shimus-projects.vercel.app/products/${product._id}`, {
+        fetch(`https://brand-shop-server-bl488qyui-shamima-shimus-projects.vercel.app/products/${product._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

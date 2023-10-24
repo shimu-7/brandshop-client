@@ -21,7 +21,7 @@ const DisplayCart = ({ product, setProducts, products }) => {
                 //     'Your file has been deleted.',
                 //     'success'
                 // )
-                fetch(`https://brand-shop-server-o7rumxnjq-shamima-shimus-projects.vercel.app/cart/${_id}`, {
+                fetch(`https://brand-shop-server-bl488qyui-shamima-shimus-projects.vercel.app/cart/${_id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())

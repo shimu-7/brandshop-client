@@ -16,7 +16,7 @@ const AddProduct = () => {
         const newProduct = { pName, bName, photo, type, price, rating, description };
         console.log(newProduct);
 
-        fetch('https://brand-shop-server-o7rumxnjq-shamima-shimus-projects.vercel.app/products', {
+        fetch('https://brand-shop-server-bl488qyui-shamima-shimus-projects.vercel.app/products', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

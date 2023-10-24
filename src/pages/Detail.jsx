@@ -20,7 +20,7 @@ const Detail = () => {
         const selectedProduct = { pName, bName, photo, type, price, rating, description,email };
         console.log(selectedProduct);
 
-        fetch('https://brand-shop-server-o7rumxnjq-shamima-shimus-projects.vercel.app/cart', {
+        fetch('https://brand-shop-server-bl488qyui-shamima-shimus-projects.vercel.app/cart', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

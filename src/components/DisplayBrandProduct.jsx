@@ -1,15 +1,16 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { AiFillStar } from "react-icons/ai";
 
 
 const DisplayBrandProduct = ({ product }) => {
 
     const { pName, bName, photo, type, price, rating } = product;
     const rate = parseInt(rating);
-    const count = [1,2,3,4,5];
+    const count = [1, 2, 3, 4, 5];
     //console.log(rate);
-    const check = (id)=>{
-        if(rate==id) return "checked";
+    const check = (id) => {
+        if (rate == id) return "checked";
         else return ""
     }
 
@@ -25,14 +26,13 @@ const DisplayBrandProduct = ({ product }) => {
                     </h2>
                     <p>Type: {type}</p>
                     <p>Price: ${price}</p>
+                    
+                    
+                
+                    <p className='flex gap-4'>Rating: <div className='flex justify-center items-center'>{rating}<AiFillStar></AiFillStar> </div> </p>
                    
-                    <div className="rating">
-                        {count.map(id => (          
-                                <input key={id} type="radio"  className={`mask mask-star ${()=>check(id)}`}/> 
-                        ))}
-                    </div>
                     <div className="card-actions flex justify-center mt-3 w-full">
-                        <Link className='w-full' to={`/details/${product._id}`}><button  className="badge badge-success w-full ">View Details</button></Link>
+                        <Link className='w-full' to={`/details/${product._id}`}><button className="badge badge-success w-full ">View Details</button></Link>
                         <Link to={`/updateProduct/${product._id}`} className='w-full'><button className="badge  badge-accent w-full">Update</button></Link>
                     </div>
                 </div>

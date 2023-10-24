@@ -48,12 +48,12 @@ const router = createBrowserRouter([
         {
           path: "/details/:id",
           element: <PrivateRoute><Detail></Detail></PrivateRoute>,
-          loader: ()=>fetch('https://brand-shop-server-o7rumxnjq-shamima-shimus-projects.vercel.app/products')
+          loader: ()=>fetch('https://brand-shop-server-bl488qyui-shamima-shimus-projects.vercel.app/products')
         },
         {
           path: "/updateProduct/:id",
           element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-          loader: ({params})=>fetch(`https://brand-shop-server-o7rumxnjq-shamima-shimus-projects.vercel.app/products/${params.id}`)
+          loader: ({params})=>fetch(`https://brand-shop-server-bl488qyui-shamima-shimus-projects.vercel.app/products/${params.id}`)
         }
       ]
     },
