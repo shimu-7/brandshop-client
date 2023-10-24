@@ -1,4 +1,4 @@
-# Event Management Site(Weeding planner)
+# Brand Shop
 
 **5 project features**
 ---
